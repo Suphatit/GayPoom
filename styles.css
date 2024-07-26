@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* สีพื้นหลังเริ่มต้น */
+    background-size: cover; /* ทำให้ภาพพื้นหลังขยายให้เต็มพื้นที่ */
+    background-position: center; /* จัดตำแหน่งภาพพื้นหลังตรงกลาง */
+    background-repeat: no-repeat; /* ป้องกันการซ้ำของภาพพื้นหลัง */
+    background-attachment: fixed; /* ทำให้ภาพพื้นหลังไม่เลื่อนเมื่อเลื่อนหน้า */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ทำให้ body เต็มความสูงของหน้าจอ */
+    overflow: hidden; /* ป้องกันการเลื่อนหน้า */
+}
+
+.rotate-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #fff;
+    background-color: #000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.rotate-message.active {
+    display: block;
+}
+
+.level-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 90%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* สไตล์สำหรับปุ่มในหน้าแรก */
+.level-container .button {
+    border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
+    background-color: #28a745; /* เปลี่ยนสีพื้นหลังเป็นสีเขียว */
+    width: 60px; /* กำหนดความกว้าง */
+    height: 60px; /* กำหนดความสูง */
+    padding: 0; /* ลบ padding ด้านใน */
+    font-size: 14px; /* ปรับขนาดฟอนต์ */
+    color: #fff; /* สีตัวอักษร */
+    border: none; /* ลบเส้นขอบ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อ hover */
+    text-align: center; /* จัดตำแหน่งข้อความกลางปุ่ม */
+    display: flex; /* ใช้ flexbox */
+    align-items: center; /* จัดตำแหน่งแนวตั้ง */
+    justify-content: center; /* จัดตำแหน่งแนวนอน */
+    transition: background-color 0.3s; /* การเปลี่ยนสีพื้นหลัง */
+}
+
+.level-container .button:hover {
+    background-color: #218838; /* สีเขียวเข้มขึ้นเมื่อ hover */
+}
+
+/* สไตล์สำหรับปุ่มในหน้าอื่นๆ */
+.button {
+    padding: 15px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
